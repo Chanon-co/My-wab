@@ -1,3 +1,55 @@
+/* keyframes */
+@keyframes rainbowText {
+  0%   { color: #000000; }    /* ดำ */
+  8.33%  { color: #4B0082; }  /* ม่วง */
+  16.66% { color: #0000FF; }  /* น้ำเงิน */
+  25%    { color: #00BFFF; }  /* ฟ้า */
+  33.33% { color: #00FF00; }  /* เขียว */
+  41.66% { color: #FFFF00; }  /* เหลือง */
+  50%    { color: #FFA500; }  /* ส้ม */
+  58.33% { color: #FF0000; }  /* แดง */
+  66.66% { color: #FF69B4; }  /* ชมพู */
+  75%    { color: #FFFFFF; }  /* ขาว */
+  83.33% { color: #00FFCC; }  /* ฟ้าอมเขียว */
+  91.66% { color: #9400D3; }  /* ม่วงเข้ม */
+  100%   { color: #000000; }  /* กลับมาดำ */
+}
+
+@keyframes rainbowBorder {
+  0%   { border-color: #000000; }
+  8.33%  { border-color: #4B0082; }
+  16.66% { border-color: #0000FF; }
+  25%    { border-color: #00BFFF; }
+  33.33% { border-color: #00FF00; }
+  41.66% { border-color: #FFFF00; }
+  50%    { border-color: #FFA500; }
+  58.33% { border-color: #FF0000; }
+  66.66% { border-color: #FF69B4; }
+  75%    { border-color: #FFFFFF; }
+  83.33% { border-color: #00FFCC; }
+  91.66% { border-color: #9400D3; }
+  100%   { border-color: #000000; }
+}
+
+@keyframes colorChange {
+    0% {
+        color: #fff;
+    }
+    25% {
+        color: #0f0;
+    }
+    50% {
+        color: rgb(0, 119, 255);
+    }
+    75% {
+        color: rgb(236, 98, 18);
+    }
+    100% {
+        color: #ff0202;
+    }
+}
+/* keyframes */
+
 body {
     display: block;
     justify-content: centers;
@@ -22,23 +74,7 @@ body {
     
 }
 
-@keyframes colorChange {
-    0% {
-        color: #fff;
-    }
-    25% {
-        color: #0f0;
-    }
-    50% {
-        color: rgb(0, 119, 255);
-    }
-    75% {
-        color: rgb(236, 98, 18);
-    }
-    100% {
-        color: #ff0202;
-    }
-}
+
 
 .profile p {
     animation: colorChange 2s infinite; /* ทำให้ข้อความเปลี่ยนสี */
@@ -53,6 +89,7 @@ body {
     position: sticky;
     top: 0; /* ให้ติดอยู่ด้านบน */
     background-color: #333;
+    box-shadow: #1f1f1f 0px 0px 10px;
     
     p , span {
         margin: 0; /* ลบระยะขอบบนล่าง */
@@ -62,6 +99,11 @@ body {
 
 .hight-profile {
     grid-area: 2 / 1 / 4 / 7;
+    background-color: #797979;
+    z-index: -2;
+    box-shadow: #333 0px 0px 10px;
+    position: relative;
+    overflow: hidden;
 }
 
 .background img{
@@ -78,16 +120,28 @@ body {
     border-radius: 50%;
     margin-left: 20px;
     margin-top: 150px;
-    border: solid 3px white;
+    border: 3px solid;
+    animation: rainbowBorder 5s linear infinite; /* ทำให้ข้อความเปลี่ยนสี */
 }
 
 #name {
-    font-size: 25px;
-
+    font-size: 30px;
+    text-shadow: #1f1f1f 0px 0px 10px;
 }
 
 .profile-text {
-    margin: 10px;
+    margin: 0 10px;
+    padding: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#like {
+    width: 70px;
+    height: 50px;
+    border-radius: 5px;
+    margin-right: 10px;
 }
 
 
@@ -96,12 +150,17 @@ body {
     display: flex;
     flex-direction: column;
     margin: 10px;
-    margin-top: 30px;
+    margin-top: 20px;
     gap: 30px;
 }
 
 .about-me span {
     white-space: pre-line;
+    font-size: 16px;
+}
+
+#About {
+    font-size: 20px;
 }
 
 .skill {
