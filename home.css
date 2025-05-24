@@ -1,0 +1,139 @@
+body {
+    display: block;
+    justify-content: centers;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    background: #333;
+    background-image: linear-gradient(rgba(197, 197, 197, 0.281) .1em, transparent .1em), linear-gradient(90deg, rgba(197, 197, 197, 0.281) .1em, transparent .1em);
+    background-size: 3em 3em;
+    color: antiquewhite;
+    font-family: "Cascadia Code", sans-serif;
+    font-optical-sizing: auto;
+    
+}
+
+.parent {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: 60px auto 1fr 200px 1fr auto;
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+    
+}
+
+@keyframes colorChange {
+    0% {
+        color: #fff;
+    }
+    25% {
+        color: #0f0;
+    }
+    50% {
+        color: rgb(0, 119, 255);
+    }
+    75% {
+        color: rgb(236, 98, 18);
+    }
+    100% {
+        color: #ff0202;
+    }
+}
+
+.profile p {
+    animation: colorChange 2s infinite; /* ทำให้ข้อความเปลี่ยนสี */
+}
+
+.profile {
+    grid-area: 1 / 1 / 2 / 7;
+    display: flex;
+    justify-content: space-between; /* ให้ p กับ span อยู่คนละฝั่ง */
+    align-items: center;
+    padding: 0px; /* เพิ่มระยะขอบซ้ายขวา */
+    position: sticky;
+    top: 0; /* ให้ติดอยู่ด้านบน */
+    background-color: #333;
+    
+    p , span {
+        margin: 0; /* ลบระยะขอบบนล่าง */
+        padding: 0 10px; /* เพิ่มระยะขอบซ้ายขวา */
+    }
+}
+
+.hight-profile {
+    grid-area: 2 / 1 / 4 / 7;
+}
+
+.background img{
+    width: 100%;
+    height: 250px;
+    z-index: -1;
+    position: absolute;
+    
+}
+
+.profile-main img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin-left: 20px;
+    margin-top: 150px;
+    border: solid 3px white;
+}
+
+#name {
+    font-size: 25px;
+
+}
+
+.profile-text {
+    margin: 10px;
+}
+
+
+.content {
+    grid-area: 4 / 1 / 6 / 7;
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+    margin-top: 30px;
+    gap: 30px;
+}
+
+.about-me span {
+    white-space: pre-line;
+}
+
+.skill {
+    margin-top: 50px;
+}
+
+.skills-list {
+    margin: 0;
+    padding: 0;
+}
+
+.skills-list li {
+    list-style: none;
+    display: inline-block;
+}
+
+.skills-list li img {
+    width: 50px;
+    height: 50px;
+    margin: 0px;
+    padding: 0;
+    border-radius: 50%;
+    transition: transform 0.3s ease;
+}
+
+.footer {
+    grid-area: 6 / 1 / 6 / 7;
+    display: flex;
+    justify-content: center;
+    align-items: button;
+    background-color: #333333d2;
+    
+    font-size: 10px;
+    
+}
