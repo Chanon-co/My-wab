@@ -1,0 +1,286 @@
+/* keyframes */
+
+@keyframes rainbowText {
+    0% {
+        color: #000000;
+    }
+    /* ดำ */
+    8.33% {
+        color: #4B0082;
+    }
+    /* ม่วง */
+    16.66% {
+        color: #0000FF;
+    }
+    /* น้ำเงิน */
+    25% {
+        color: #00BFFF;
+    }
+    /* ฟ้า */
+    33.33% {
+        color: #00FF00;
+    }
+    /* เขียว */
+    41.66% {
+        color: #FFFF00;
+    }
+    /* เหลือง */
+    50% {
+        color: #FFA500;
+    }
+    /* ส้ม */
+    58.33% {
+        color: #FF0000;
+    }
+    /* แดง */
+    66.66% {
+        color: #FF69B4;
+    }
+    /* ชมพู */
+    75% {
+        color: #FFFFFF;
+    }
+    /* ขาว */
+    83.33% {
+        color: #00FFCC;
+    }
+    /* ฟ้าอมเขียว */
+    91.66% {
+        color: #9400D3;
+    }
+    /* ม่วงเข้ม */
+    100% {
+        color: #000000;
+    }
+    /* กลับมาดำ */
+}
+
+@keyframes rainbowBorder {
+    0% {
+        border-color: #000000;
+    }
+    8.33% {
+        border-color: #4B0082;
+    }
+    16.66% {
+        border-color: #0000FF;
+    }
+    25% {
+        border-color: #00BFFF;
+    }
+    33.33% {
+        border-color: #00FF00;
+    }
+    41.66% {
+        border-color: #FFFF00;
+    }
+    50% {
+        border-color: #FFA500;
+    }
+    58.33% {
+        border-color: #FF0000;
+    }
+    66.66% {
+        border-color: #FF69B4;
+    }
+    75% {
+        border-color: #FFFFFF;
+    }
+    83.33% {
+        border-color: #00FFCC;
+    }
+    91.66% {
+        border-color: #9400D3;
+    }
+    100% {
+        border-color: #000000;
+    }
+}
+
+@keyframes colorChange {
+    0% {
+        color: #fff;
+    }
+    25% {
+        color: #0f0;
+    }
+    50% {
+        color: rgb(0, 119, 255);
+    }
+    75% {
+        color: rgb(236, 98, 18);
+    }
+    100% {
+        color: #ff0202;
+    }
+}
+
+
+/* keyframes */
+
+body {
+    display: block;
+    justify-content: centers;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    background: #333;
+    background-image: linear-gradient(rgba(197, 197, 197, 0.281) .01em, transparent .1em), linear-gradient(90deg, rgba(197, 197, 197, 0.281) .1em, transparent .1em);
+    background-size: 2.5em 2.5em;
+    color: antiquewhite;
+    font-family: "Cascadia Code", sans-serif;
+    font-optical-sizing: auto;
+}
+
+.parent {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: 60px auto auto 200px 1fr auto;
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+}
+
+.profile p {
+    animation: colorChange 2s infinite;
+    /* ทำให้ข้อความเปลี่ยนสี */
+}
+
+.profile {
+    grid-area: 1 / 1 / 2 / 7;
+    display: flex;
+    justify-content: space-between;
+    /* ให้ p กับ span อยู่คนละฝั่ง */
+    align-items: center;
+    padding: 0px;
+    /* เพิ่มระยะขอบซ้ายขวา */
+    position: sticky;
+    top: 0;
+    /* ให้ติดอยู่ด้านบน */
+    background-color: #333;
+    box-shadow: #1f1f1f 0px 0px 10px;
+    p,
+    span {
+        margin: 0;
+        /* ลบระยะขอบบนล่าง */
+        padding: 0 10px;
+        /* เพิ่มระยะขอบซ้ายขวา */
+    }
+}
+
+.hight-profile {
+    grid-area: 2 / 1 / 4 / 7;
+    background-color: #797979;
+    z-index: -2;
+    box-shadow: #333 0px 0px 10px;
+    position: relative;
+    overflow: hidden;
+}
+
+.background img {
+    width: 100%;
+    height: 250px;
+    z-index: -1;
+    position: absolute;
+}
+
+.profile-main img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin-left: 20px;
+    margin-top: 150px;
+    border: 3px solid;
+    animation: rainbowBorder 5s linear infinite;
+    /* ทำให้ข้อความเปลี่ยนสี */
+}
+
+#name {
+    font-size: 30px;
+    text-shadow: #1f1f1f 0px 0px 10px;
+}
+
+#ismaeen {
+    color: rgb(228, 162, 82);
+}
+
+.profile-text {
+    margin: 0 10px;
+    padding: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#like {
+    width: 70px;
+    height: 50px;
+    border-radius: 5px;
+    margin-right: 10px;
+}
+
+.content {
+    grid-area: 4 / 1 / 6 / 7;
+    display: flex;
+    flex-direction: column;
+    margin: 15px;
+    margin-top: 20px;
+    gap: 30px;
+}
+
+.about-me span {
+    white-space: pre-line;
+    font-size: 16px;
+}
+
+#About {
+    font-size: 25px;
+    color: burlywood;
+}
+
+.skill {
+    margin-top: 50px;
+}
+
+.skills-list {
+    margin: 0;
+    padding: 0;
+}
+
+.skills-list li {
+    list-style: none;
+    display: inline-block;
+}
+
+.skills-list li img {
+    width: 50px;
+    height: 50px;
+    margin: 0px;
+    padding: 0;
+    border-radius: 50%;
+    transition: transform 0.3s ease;
+}
+
+.contact {
+    display: flex;
+    flex-direction: column;
+}
+
+.contact a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 20px;
+    margin: 5px 0;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: #444;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.footer {
+    grid-area: 6 / 1 / 6 / 7;
+    display: flex;
+    justify-content: center;
+    align-items: button;
+    background-color: #333333d2;
+    font-size: 10px;
+}
