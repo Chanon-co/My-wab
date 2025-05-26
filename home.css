@@ -284,3 +284,111 @@ body {
     background-color: #333333d2;
     font-size: 10px;
 }
+
+/* nav-bar */
+
+
+/* ซ่อน checkbox */
+
+.toggle-checkbox {
+    display: none;
+}
+
+
+/* ปุ่ม toggle */
+
+.toggle-button {
+    font-size: 2em;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    z-index: 1100;
+}
+
+
+/* หมุนปุ่มเมื่อ checkbox ถูกเลือก */
+
+.toggle-checkbox:checked+.toggle-button {
+    transform: rotate(90deg);
+}
+
+
+/* แถบ nav bar */
+
+.bar {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease, padding 0.3s ease;
+    background-color: #444444a4;
+    backdrop-filter: blur(10px);
+    color: #fff;
+    padding: 0;
+    position: fixed;
+    /* ครอบคลุมทั้งหน้าจอ */
+    top: 0;
+    width: 100%;
+    /* เต็มความกว้าง */
+    height: 100%;
+    /* เต็มความสูง */
+    z-index: 1000;
+    /* ให้อยู่ด้านบนสุด */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+
+/* แสดงแถบ nav bar เมื่อ checkbox ถูกเลือก */
+
+.toggle-checkbox:checked~.bar {
+    max-height: 100%;
+    /* เต็มจอ */
+    padding: 0px;
+}
+
+
+/* สไตล์รายการใน nav bar */
+
+.bar ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.bar ul li {
+    margin: 10px auto;
+    background-color: #444;
+    width: 90%;
+    height: 60%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    border: #1f1f1f 1px solid;
+    box-shadow: #1f1f1f 0px 0px 10px;
+}
+
+.bar ul li a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 30px;
+    transition: color 0.3s ease;
+}
+
+.bar ul li a:hover {
+    color: #ff9800;
+}
+
+
+/* nav-bar */
