@@ -118,6 +118,11 @@
 
 /* keyframes */
 
+html {
+    scroll-behavior: smooth;
+    /* ทำให้การเลื่อนหน้าเรียบ */
+}
+
 body {
     display: block;
     justify-content: centers;
@@ -158,6 +163,7 @@ body {
     /* ให้ติดอยู่ด้านบน */
     background-color: #333;
     box-shadow: #1f1f1f 0px 0px 10px;
+    z-index: 2000;
     p,
     span {
         margin: 0;
@@ -172,8 +178,9 @@ body {
     background-color: #797979;
     z-index: -2;
     box-shadow: #333 0px 0px 10px;
-    position: relative;
-    overflow: hidden;
+    /* position: relative; */
+    /* overflow: visible; */
+    z-index: 200;
 }
 
 .background img {
@@ -181,6 +188,10 @@ body {
     height: 250px;
     z-index: -1;
     position: absolute;
+}
+
+.profile-main {
+    z-index: 100;
 }
 
 .profile-main img {
@@ -209,13 +220,50 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    /* position: relative; */
+    z-index: 1000;
+    overflow: visible;
 }
 
+
+
+
 #like {
-    width: 70px;
-    height: 50px;
+    width: auto;
+    height: auto;
     border-radius: 5px;
     margin-right: 10px;
+    pointer-events: auto;
+    z-index: 1100;
+    /* position: absolute; */
+    overflow: hidden;
+    background-color: #797979;
+
+}
+
+.like-button {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 18px;
+    font-weight: bold;
+    color: rgb(26, 26, 26);
+    background-color: #ffffff !important;
+    position: relative;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: transform 0.2s ease, background-color 0.3s ease;
+    text-decoration: none;
+    text-align: center;
+}
+
+.like-button:active {
+    transform: scale(1.1); /* ขยายปุ่มเล็กน้อยเมื่อกด */
+}
+
+.like-button.liked {
+    background-color: #0071bd !important; /* เปลี่ยนสีเมื่อกดแล้ว */
+    color: rgb(255, 255, 255);
 }
 
 .content {
@@ -260,12 +308,12 @@ body {
     transition: transform 0.3s ease;
 }
 
-.contact {
+#contact {
     display: flex;
     flex-direction: column;
 }
 
-.contact a {
+#contact a, #contact span {
     text-decoration: none;
     color: #fff;
     font-size: 20px;
@@ -304,7 +352,7 @@ body {
     position: absolute;
     top: 10px;
     right: 10px;
-    z-index: 1100;
+    z-index: 10000;
 }
 
 
@@ -332,7 +380,7 @@ body {
     /* เต็มความกว้าง */
     height: 100%;
     /* เต็มความสูง */
-    z-index: 1000;
+    z-index: 9999 !important;
     /* ให้อยู่ด้านบนสุด */
     display: flex;
     flex-direction: column;
