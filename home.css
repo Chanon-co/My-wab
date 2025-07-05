@@ -205,6 +205,25 @@ body {
     /* ทำให้ข้อความเปลี่ยนสี */
 }
 
+#cat-rnb {
+    display: flex;
+    position: absolute;
+    top: 36%;
+    left: 75%;
+    width: 100px;
+    height: 100px;
+}
+
+#cat-2 {
+    display: flex;
+    position: absolute;
+    top: 34%;
+    left: 30%;
+    width: 200px;
+    height: 200px;
+    rotate: 180deg;
+}
+
 #name {
     font-size: 30px;
     text-shadow: #1f1f1f 0px 0px 10px;
